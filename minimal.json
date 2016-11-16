@@ -1,0 +1,37 @@
+{
+  "version": 8,
+  "sources": {
+    "world": {
+      "type": "vector",
+      "tiles": [
+        "http://localhost:7777/v2/tiles/{z}/{x}/{y}.vector.pbf"
+      ],
+      "minzoom": 0,
+      "maxzoom": 20
+    }
+  },
+  "layers": [{
+    "id": "world",
+    "type": "background",
+    "paint": {
+      "background-color": "#fff"
+    }
+  }, {
+    "id": "road",
+    "type": "line",
+    "source": "world",
+    "source-layer": "road",
+    "paint": {
+      "line-color": "#000000"
+    }
+  },
+    {
+      "id":"water",
+      "type": "fill",
+      "source": "world",
+      "source-layer": "water",
+      "paint": {
+        "fill-color": "#3498db"
+      }
+    }]
+}
